@@ -86,9 +86,13 @@ function placeInTable(y, x) {
 	const cell = document.getElementById(`${y}-${x}`);
 	const newPiece = document.createElement('div');
 	newPiece.classList.add('piece');
-	newPiece.classList.add('p1');
+
+	if (currPlayer === 1) {
+		newPiece.classList.add('p1');
+	} else {
+		newPiece.classList.add('p2');
+	}
 	cell.appendChild(newPiece);
-	// cell.setAttribute('id', `${i}-${j}`);
 }
 
 /** endGame: announce game end */
