@@ -76,13 +76,9 @@ const makeHtmlBoard = () => {
 
 function findSpotForCol(x) {
 	// TODO: write the real version of this, rather than always returning 0
-	let y = 6;
-
-	for (let i = y; i < board.length; i--) {
-		if (board[y][x] === null) {
+	for (let y = HEIGHT - 1; y >= 0; y--) {
+		if (!board[y][x]) {
 			return y;
-		} else {
-			y--;
 		}
 	}
 	return null;
