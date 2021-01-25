@@ -92,6 +92,7 @@ function placeInTable(y, x) {
 	const cell = document.getElementById(`${y}-${x}`);
 	const newPiece = document.createElement('div');
 	newPiece.classList.add('piece');
+	// newPiece.style.top = -50 * (y + 2);
 
 	// set piece background-color based on player
 	if (currPlayer === 1) {
@@ -126,7 +127,8 @@ function handleClick(evt) {
 	// place piece in board and add to HTML table
 	// TODO: add line to update in-memory board
 	placeInTable(y, x);
-	currPlayer === 1 ? (board[y][x] = 'p1') : (board[y][x] = 'p2');
+	// currPlayer === 1 ? (board[y][x] = 'p1') : (board[y][x] = 'p2');
+	currPlayer === 1 ? (board[y][x] = 1) : (board[y][x] = 2);
 
 	// check for win
 	if (checkForWin()) {
